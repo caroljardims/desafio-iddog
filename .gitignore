@@ -1,0 +1,3 @@
+# ignore Pod files
+
+iddog/Pods/*
