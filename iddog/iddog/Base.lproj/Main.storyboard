@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sing Up View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SingUpViewController" customModule="iddog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Ake-oD-f3s">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conecte-se para uma experiência incrível" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxY-Kz-Ba1">
+                                <rect key="frame" x="20" y="44" width="250" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="2lb-5f-133"/>
+                                    <constraint firstAttribute="width" constant="250" id="fgr-Zc-R5H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-CL-56d">
+                                <rect key="frame" x="82" y="404" width="250" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-Sc-K0r">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="ECB-di-LvR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqU-SP-QdG">
+                                        <rect key="frame" x="102" y="42" width="46" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="9iz-Pl-iPO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Entrar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="enterEmailAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="edR-Ys-Ahp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lfL-CL-56d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AA4-b2-Lud"/>
+                            <constraint firstAttribute="bottom" secondItem="Ake-oD-f3s" secondAttribute="bottom" id="HAM-Tt-LRO"/>
+                            <constraint firstItem="Ake-oD-f3s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eYQ-Xs-OsG"/>
+                            <constraint firstItem="Ake-oD-f3s" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gjK-6P-scZ"/>
+                            <constraint firstItem="XxY-Kz-Ba1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jRb-h9-FCt"/>
+                            <constraint firstItem="lfL-CL-56d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r2P-MB-Dxc"/>
+                            <constraint firstItem="Ake-oD-f3s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="t4r-wr-Enh"/>
+                            <constraint firstItem="XxY-Kz-Ba1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tBE-xH-NAk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="tjk-Sc-K0r" id="Lu5-nJ-ajy"/>
+                        <outlet property="enterButton" destination="SqU-SP-QdG" id="XOp-Cg-A85"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="86" y="98"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loginscreen" width="2074" height="3687"/>
+    </resources>
 </document>
