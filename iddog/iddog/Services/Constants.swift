@@ -8,8 +8,11 @@
 
 import Foundation
 
-let baseUrl = "https://iddog-nrizncxqba-uc.a.run.app"
-let signupExtensionUrl = "/signup"
-let feedExtensionUrl = "/feed"
-var userToken: String?
-var userData: UserData?
+struct Constants {
+    static let baseUrl = "https://iddog-nrizncxqba-uc.a.run.app"
+    static let signupExtensionUrl = "/signup"
+    static let feedExtensionUrl = "/feed"
+    static let userToken = "userToken"
+}
+
+

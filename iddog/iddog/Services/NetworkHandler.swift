@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import KeychainSwift
 
 struct Service {
     static let shared = Service()
@@ -15,7 +16,7 @@ struct Service {
     func signup( _ parameters: [String:String]?,
                  success: @escaping (UserData) -> Void,
                  failure: @escaping (String) -> Void) {
-        Alamofire.request("\(baseUrl)\(signupExtensionUrl)",
+        Alamofire.request("\(Constants.baseUrl)\(Constants.signupExtensionUrl)",
             method: .post,
             parameters: parameters).responseJSON { response in
                 let decoder = JSONDecoder()
@@ -32,41 +33,32 @@ struct Service {
     func getFeed(_ query: DogCategory?,
                  success: @escaping (Dog) -> Void,
                  failure: @escaping (String) -> Void) {
-        guard let userToken = userToken else {
-            failure("User not logged.")
+        let keychain = KeychainSwift()
+        guard let userToken = keychain.get(Constants.userToken) else {
+            failure("No user token found.")
             return
         }
         
         var category = ["":""]
-        
-        switch query {
-        case .hound:
-            category = ["category":"hound"]
-            break
-        case .husky:
-            category = ["category":"husky"]
-            break
-        case .labrador:
-            category = ["category":"labrador"]
-            break
-        case .pug:
-            category = ["category":"pug"]
-            break
-        default:
-            break
+        if (query != nil) {
+            category = ["category":query!.rawValue]
         }
         
-        
         let headers = ["Authorization":userToken]
-        Alamofire.request("\(baseUrl)\(feedExtensionUrl)",
+        Alamofire.request("\(Constants.baseUrl)\(Constants.feedExtensionUrl)",
             method: .get,
             parameters: category,
             encoding: URLEncoding.queryString,
             headers: headers).responseJSON { response in
+                if let value = response.result.value as? [String: AnyObject] {
+                    if let error = value["error"] {
+                        failure(error["message"] as? String ?? "Request failed.")
+                        return
+                    }
+                }
                 let decoder = JSONDecoder()
                 do {
                     let dog = try decoder.decode(Dog.self, from: response.data!)
-                    print(dog)
                     success(dog)
                 } catch {
                     print(error.localizedDescription)

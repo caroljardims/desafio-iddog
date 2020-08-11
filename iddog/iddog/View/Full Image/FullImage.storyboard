@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Full Image View Controller-->
+        <scene sceneID="XaP-BG-TME">
+            <objects>
+                <viewController storyboardIdentifier="FullImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ma-ds-FNH" customClass="FullImageViewController" customModule="iddog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kug-Cd-VPG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-XQ-zoo">
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqP-dp-QDn">
+                                <rect key="frame" x="340" y="44" width="54" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="dRO-Mt-PVM"/>
+                                    <constraint firstAttribute="height" constant="50" id="qtB-2G-I5D"/>
+                                </constraints>
+                                <state key="normal" title="Fechar"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="8ma-ds-FNH" eventType="touchUpInside" id="cMs-1U-NxG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LqP-dp-QDn" firstAttribute="top" secondItem="M8V-S6-FL8" secondAttribute="top" id="DnA-Il-Jbq"/>
+                            <constraint firstItem="d9a-XQ-zoo" firstAttribute="top" secondItem="LqP-dp-QDn" secondAttribute="bottom" id="JOq-uU-KMU"/>
+                            <constraint firstAttribute="bottom" secondItem="d9a-XQ-zoo" secondAttribute="bottom" id="XoW-8S-xpc"/>
+                            <constraint firstItem="M8V-S6-FL8" firstAttribute="trailing" secondItem="LqP-dp-QDn" secondAttribute="trailing" constant="20" id="e2F-WU-yBO"/>
+                            <constraint firstItem="d9a-XQ-zoo" firstAttribute="leading" secondItem="M8V-S6-FL8" secondAttribute="leading" id="l9Q-5q-vuH"/>
+                            <constraint firstItem="d9a-XQ-zoo" firstAttribute="trailing" secondItem="M8V-S6-FL8" secondAttribute="trailing" id="mfJ-Q0-Uyf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M8V-S6-FL8"/>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="d9a-XQ-zoo" id="N2Y-0t-fUN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ww-ew-77F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-184.05797101449278" y="-144.64285714285714"/>
+        </scene>
+    </scenes>
+</document>

@@ -8,11 +8,11 @@
 
 import Foundation
 import UIKit
-import Nuke
 
 class FeedDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     var list = [String]()
+    var viewModel: UpdateViewModelProtocol?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -20,10 +20,14 @@ class FeedDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as DogTableViewCell
+        cell.selectionStyle = .none
         let url = list[indexPath.row]
-        print(url)
-        Nuke.loadImage(with: (URL(string: url) ?? URL(string: "https://unsplash.com/photos/U8hfWW6uRvk")!) , into: cell.photo)
+        cell.photo.loadImageUrl(url)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel?.openImage(imageUrl: list[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -40,7 +44,27 @@ class FeedDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath) as CategoryCollectionViewCell
+        cell.setCategory(index: indexPath.row)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            viewModel?.updateCategory(category: .husky)
+            break
+        case 1:
+            viewModel?.updateCategory(category: .pug)
+            break
+        case 2:
+            viewModel?.updateCategory(category: .hound)
+            break
+        case 3:
+            viewModel?.updateCategory(category: .labrador)
+            break
+        default:
+            return
+        }
     }
     
 }

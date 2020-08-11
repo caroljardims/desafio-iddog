@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DogCategory {
+enum DogCategory: String {
     case husky
     case pug
     case hound

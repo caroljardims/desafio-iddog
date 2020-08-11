@@ -17,27 +17,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashimage" translatesAutoresizingMaskIntoConstraints="NO" id="PGH-xQ-nH4">
-                        <rect key="frame" x="20" y="0.0" width="240" height="128"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="husky" translatesAutoresizingMaskIntoConstraints="NO" id="PGH-xQ-nH4">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="128" id="gAV-fJ-bhw"/>
-                            <constraint firstAttribute="width" constant="240" id="gv1-XO-Oh5"/>
+                            <constraint firstAttribute="height" constant="140" id="Akv-2V-QKg"/>
+                            <constraint firstAttribute="width" constant="280" id="vKu-kk-irC"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7j-hT-3s1">
+                        <rect key="frame" x="112.5" y="58" width="55.5" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="PGH-xQ-nH4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fwy-fz-DYI"/>
-                <constraint firstItem="PGH-xQ-nH4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="nvY-rQ-WST"/>
-                <constraint firstItem="PGH-xQ-nH4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wUL-iC-IIH"/>
+                <constraint firstItem="h7j-hT-3s1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JlV-hX-9Ov"/>
+                <constraint firstItem="h7j-hT-3s1" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="KbP-6b-Zdd"/>
+                <constraint firstItem="PGH-xQ-nH4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yQ8-tc-DBq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="378" height="151"/>
-            <point key="canvasLocation" x="-133.33333333333334" y="-10.379464285714285"/>
+            <connections>
+                <outlet property="categoryImage" destination="PGH-xQ-nH4" id="ouK-cn-F4b"/>
+                <outlet property="categoryLabel" destination="h7j-hT-3s1" id="Dmq-Sd-gAV"/>
+            </connections>
+            <point key="canvasLocation" x="-136.23188405797103" y="-50.223214285714285"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="splashimage" width="3024" height="4032"/>
+        <image name="husky" width="4000" height="6000"/>
     </resources>
 </document>

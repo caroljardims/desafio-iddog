@@ -18,55 +18,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-V3-Scc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="35c-gA-gbx"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jdG-6l-oAx">
-                                    <size key="itemSize" width="283" height="140"/>
+                                <inset key="scrollIndicatorInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jdG-6l-oAx">
+                                    <size key="itemSize" width="280" height="140"/>
                                     <size key="estimatedItemSize" width="280" height="140"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Rn6-xc-Fif">
-                                        <rect key="frame" x="0.0" y="5" width="283" height="140"/>
+                                        <rect key="frame" x="20" y="5" width="280" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Td-Ya-bAZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="283" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="283" height="140"/>
+                                        <size key="customSize" width="280" height="140"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sif-h0-EFT">
-                                <rect key="frame" x="0.0" y="214" width="414" height="682"/>
+                                <rect key="frame" x="0.0" y="290" width="414" height="606"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnp-Wd-c7h">
+                                <rect key="frame" x="20" y="116" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcm-GJ-2ds">
+                                <rect key="frame" x="354" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mf9-hq-W91"/>
+                                    <constraint firstAttribute="width" constant="40" id="x1X-5I-jgM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Sair"/>
+                                <connections>
+                                    <action selector="leaveButton:" destination="Bgb-I6-rRu" eventType="touchUpInside" id="Qyz-5S-KkE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lnp-Wd-c7h" firstAttribute="leading" secondItem="Gb3-KC-bBW" secondAttribute="leading" constant="20" id="25B-Uu-bgd"/>
+                            <constraint firstItem="Mcm-GJ-2ds" firstAttribute="top" secondItem="Gb3-KC-bBW" secondAttribute="top" id="4QG-9s-W9m"/>
                             <constraint firstItem="BTN-V3-Scc" firstAttribute="leading" secondItem="Gb3-KC-bBW" secondAttribute="leading" id="5eO-2W-j1r"/>
-                            <constraint firstItem="BTN-V3-Scc" firstAttribute="top" secondItem="Gb3-KC-bBW" secondAttribute="top" id="AuO-7Z-nvE"/>
+                            <constraint firstItem="BTN-V3-Scc" firstAttribute="top" secondItem="Gb3-KC-bBW" secondAttribute="top" constant="80" id="AuO-7Z-nvE"/>
+                            <constraint firstItem="Gb3-KC-bBW" firstAttribute="trailing" secondItem="Mcm-GJ-2ds" secondAttribute="trailing" constant="20" id="XVg-M3-wvI"/>
+                            <constraint firstItem="BTN-V3-Scc" firstAttribute="top" secondItem="lnp-Wd-c7h" secondAttribute="bottom" constant="8" id="aVN-Oa-GY5"/>
                             <constraint firstItem="Sif-h0-EFT" firstAttribute="leading" secondItem="Gb3-KC-bBW" secondAttribute="leading" id="aa1-Th-RS0"/>
+                            <constraint firstItem="Gb3-KC-bBW" firstAttribute="trailing" secondItem="lnp-Wd-c7h" secondAttribute="trailing" constant="20" id="cWP-sA-Tlp"/>
                             <constraint firstAttribute="bottom" secondItem="Sif-h0-EFT" secondAttribute="bottom" id="kce-NB-GxL"/>
                             <constraint firstItem="BTN-V3-Scc" firstAttribute="trailing" secondItem="Gb3-KC-bBW" secondAttribute="trailing" id="s7u-Fr-vFL"/>
                             <constraint firstItem="Sif-h0-EFT" firstAttribute="trailing" secondItem="Gb3-KC-bBW" secondAttribute="trailing" id="v1Z-nd-omY"/>
-                            <constraint firstItem="Sif-h0-EFT" firstAttribute="top" secondItem="BTN-V3-Scc" secondAttribute="bottom" constant="20" id="xKm-83-kUQ"/>
+                            <constraint firstItem="Sif-h0-EFT" firstAttribute="top" secondItem="BTN-V3-Scc" secondAttribute="bottom" constant="16" id="xKm-83-kUQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gb3-KC-bBW"/>
                     </view>
                     <connections>
+                        <outlet property="categoryLabel" destination="lnp-Wd-c7h" id="HbY-Cb-aY6"/>
                         <outlet property="collectionView" destination="BTN-V3-Scc" id="yxz-Xt-LMM"/>
                         <outlet property="tableView" destination="Sif-h0-EFT" id="DT1-br-mUD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5H-Ro-k7C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-891.304347826087" y="-923.4375"/>
+            <point key="canvasLocation" x="-1006" y="-968"/>
         </scene>
     </scenes>
 </document>

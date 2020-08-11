@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 protocol UserViewModelProtocol {
     func checkUserToken(isLogged: @escaping (Bool) -> Void)
@@ -15,16 +16,17 @@ protocol UserViewModelProtocol {
 
 class UserViewModel: UserViewModelProtocol {
     
+    var user: UserData?
+    private let keychain = KeychainSwift()
+    
     func checkUserToken(isLogged: @escaping (Bool) -> Void) {
-        let userDefaults = UserDefaults.standard
-        userToken = userDefaults.string(forKey: "userData")
-        if (userToken != nil) {
+        if let _ = self.keychain.get(Constants.userToken) {
             isLogged(true)
             return
         }
         isLogged(false)
     }
-
+    
     func signup(email: String,
                 success: @escaping () -> Void,
                 fail: @escaping (String?) -> Void ) {
@@ -32,15 +34,11 @@ class UserViewModel: UserViewModelProtocol {
             fail("Insira um e-mail válido para entrar.")
             return
         }
-        
         Service.shared.signup(
             ["email":email],
             success: {result in
-                userData = result
-                userToken = result.token
-                let userDefaults = UserDefaults.standard
-                userDefaults.set(userToken, forKey: "userData")
-              
+                self.user = result
+                self.keychain.set(result.token, forKey: Constants.userToken)
                 success()
         }, failure: {error in print(error)})
     }

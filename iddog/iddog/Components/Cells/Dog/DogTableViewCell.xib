@@ -18,12 +18,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-AU-g9h">
-                        <rect key="frame" x="16" y="0.0" width="287" height="293"/>
+                        <rect key="frame" x="0.0" y="0.0" width="319" height="293"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Qrw-AU-g9h" secondAttribute="trailing" constant="16" id="eVf-Pc-rFi"/>
-                    <constraint firstItem="Qrw-AU-g9h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pu9-gr-oZX"/>
+                    <constraint firstAttribute="trailing" secondItem="Qrw-AU-g9h" secondAttribute="trailing" id="eVf-Pc-rFi"/>
+                    <constraint firstItem="Qrw-AU-g9h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pu9-gr-oZX"/>
                     <constraint firstAttribute="bottom" secondItem="Qrw-AU-g9h" secondAttribute="bottom" constant="16" id="tG1-Fm-8rS"/>
                     <constraint firstItem="Qrw-AU-g9h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tIh-b9-kQG"/>
                 </constraints>

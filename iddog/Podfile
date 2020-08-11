@@ -8,6 +8,7 @@ target 'iddog' do
   # Pods for iddog
   pod 'Alamofire', '~> 4.0'
   pod 'Nuke', '~> 7.0'
+  pod 'KeychainSwift', '~> 19.0'
   
   target 'iddogTests' do
     inherit! :search_paths

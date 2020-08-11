@@ -15,7 +15,6 @@ class DogTableViewCell: UITableViewCell, NibLoadableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        photo.layer.cornerRadius = 8
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

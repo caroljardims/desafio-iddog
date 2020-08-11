@@ -36,6 +36,9 @@
 		F14DAEAF24E0E58200220EDA /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14DAEAE24E0E58200220EDA /* FeedDataSource.swift */; };
 		F14DAEB324E0F39C00220EDA /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14DAEB124E0F39C00220EDA /* DogTableViewCell.swift */; };
 		F14DAEB424E0F39C00220EDA /* DogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14DAEB224E0F39C00220EDA /* DogTableViewCell.xib */; };
+		F1C9AD4224E232C4004AC2FD /* FullImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C9AD4124E232C4004AC2FD /* FullImage.storyboard */; };
+		F1C9AD4424E232F3004AC2FD /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9AD4324E232F3004AC2FD /* FullImageViewController.swift */; };
+		F1C9AD4624E24551004AC2FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9AD4524E24551004AC2FD /* UIImageView.swift */; };
 		F1E3FAB524E0AE8300FF4043 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E3FAB424E0AE8300FF4043 /* String.swift */; };
 		F1E3FAB724E0BAA900FF4043 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E3FAB624E0BAA900FF4043 /* ReusableView.swift */; };
 		F1E3FAB924E0BB3000FF4043 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E3FAB824E0BB3000FF4043 /* NibLoadableView.swift */; };
@@ -103,6 +106,9 @@
 		F14DAEAE24E0E58200220EDA /* FeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
 		F14DAEB124E0F39C00220EDA /* DogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTableViewCell.swift; sourceTree = "<group>"; };
 		F14DAEB224E0F39C00220EDA /* DogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogTableViewCell.xib; sourceTree = "<group>"; };
+		F1C9AD4124E232C4004AC2FD /* FullImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FullImage.storyboard; sourceTree = "<group>"; };
+		F1C9AD4324E232F3004AC2FD /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
+		F1C9AD4524E24551004AC2FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		F1E3FAB424E0AE8300FF4043 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F1E3FAB624E0BAA900FF4043 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		F1E3FAB824E0BB3000FF4043 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 		F123B0A524E066D60032561E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F1C9AD4024E23299004AC2FD /* Full Image */,
 				F1E3FABE24E0C10300FF4043 /* Feed */,
 				F1E3FABF24E0C11100FF4043 /* SignUp */,
 			);
@@ -244,7 +251,7 @@
 		F123B0A624E066DD0032561E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F14DAEAD24E0E56200220EDA /* FeedViewModel */,
+				F14DAEAD24E0E56200220EDA /* Feed */,
 				F123B0B424E09CA20032561E /* UserViewModel.swift */,
 			);
 			path = ViewModel;
@@ -273,6 +280,7 @@
 				F14DAEA224E0E42700220EDA /* UICollectionViewCell.swift */,
 				F14DAEA424E0E46100220EDA /* UITableView.swift */,
 				F14DAEA624E0E47A00220EDA /* UITableViewCell.swift */,
+				F1C9AD4524E24551004AC2FD /* UIImageView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -302,13 +310,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		F14DAEAD24E0E56200220EDA /* FeedViewModel */ = {
+		F14DAEAD24E0E56200220EDA /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				F14DAE9E24E0D2A900220EDA /* FeedViewModel.swift */,
 				F14DAEAE24E0E58200220EDA /* FeedDataSource.swift */,
 			);
-			path = FeedViewModel;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		F14DAEB024E0EBB600220EDA /* Cells */ = {
@@ -336,6 +344,15 @@
 				F14DAEB224E0F39C00220EDA /* DogTableViewCell.xib */,
 			);
 			path = Dog;
+			sourceTree = "<group>";
+		};
+		F1C9AD4024E23299004AC2FD /* Full Image */ = {
+			isa = PBXGroup;
+			children = (
+				F1C9AD4124E232C4004AC2FD /* FullImage.storyboard */,
+				F1C9AD4324E232F3004AC2FD /* FullImageViewController.swift */,
+			);
+			path = "Full Image";
 			sourceTree = "<group>";
 		};
 		F1E3FABE24E0C10300FF4043 /* Feed */ = {
@@ -464,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C9AD4224E232C4004AC2FD /* FullImage.storyboard in Resources */,
 				F14DAEB424E0F39C00220EDA /* DogTableViewCell.xib in Resources */,
 				F123B08124E064C70032561E /* LaunchScreen.storyboard in Resources */,
 				F14DAEAC24E0E4FB00220EDA /* CategoryCollectionViewCell.xib in Resources */,
@@ -598,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E3FAB924E0BB3000FF4043 /* NibLoadableView.swift in Sources */,
+				F1C9AD4624E24551004AC2FD /* UIImageView.swift in Sources */,
 				F123B07924E064C50032561E /* SingUpViewController.swift in Sources */,
 				F14DAEA324E0E42700220EDA /* UICollectionViewCell.swift in Sources */,
 				F1E3FABD24E0BBF000FF4043 /* StoryboardLoadable.swift in Sources */,
@@ -618,6 +637,7 @@
 				F123B0AD24E077F40032561E /* Extensions.swift in Sources */,
 				F123B0B024E07F6B0032561E /* User.swift in Sources */,
 				F123B0B524E09CA20032561E /* UserViewModel.swift in Sources */,
+				F1C9AD4424E232F3004AC2FD /* FullImageViewController.swift in Sources */,
 				F123B0B324E090370032561E /* NetworkHandler.swift in Sources */,
 				F14DAEB324E0F39C00220EDA /* DogTableViewCell.swift in Sources */,
 				F14DAEA124E0E40F00220EDA /* UICollectionView.swift in Sources */,
