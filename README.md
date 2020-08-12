@@ -37,6 +37,9 @@ Foi utilizado o CocoaPods como gestor de dependências para 3 bibliotecas utiliz
 #### :white_check_mark: Cache de imagens
 O cache de imagens é feito automaticamente nas requisições feitas com a lib [Nuke](https://github.com/kean/Nuke).
 
+### Requisito para executar o projeto
+Rodar o comando `pod install` na raiz do projeto iddog
+
 ### Decisões técnicas :exclamation:
 
 #### Arquitetura
