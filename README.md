@@ -19,7 +19,7 @@ O usuário pode sair da tela de feed e seu token será deletado do armazenamento
 
 ### Requisitos técnicos
 #### :white_check_mark: Versão mínima: iOS 9.0 
-####  :white_check_mark:Libs de terceiros
+#### :white_check_mark: Libs de terceiros
 Foi utilizado o CocoaPods como gestor de dependências para 3 bibliotecas utilizadas neste projeto:
 
 [Alamofire](https://github.com/Alamofire/Alamofire) é uma biblioteca que gerencia requisições HTTP, muito completa e poderosa que fornece uma interface de requisição simples e legível. A versão mais recente do Alamofire (5.2) não é compatível com o iOS 9.0, portanto este projeto utilizou da última versão compatível (4.0).
@@ -35,9 +35,28 @@ Foi utilizado o CocoaPods como gestor de dependências para 3 bibliotecas utiliz
 `pod 'KeychainSwift', '~> 19.0'`
 
 #### :white_check_mark: Cache de imagens
+O cache de imagens é feito automaticamente nas requisições feitas com a lib [Nuke](https://github.com/kean/Nuke).
 
-|  <img src="/images/splashscreen.png" width="250">  | <img src="/images/signupscreen.png" width="250">  | <img src="/images/feedscreen.png" width="250">  
-| <img src="/images/feedscreen2.png" width="250">  |  <img src="/images/fullscreen.png" width="250"> | <img src="/images/homescreen.png" width="250">
+### Decisões técnicas
+
+#### Arquitetura
+Utilizei a arquitetura MVVM na construção da aplicação, por ser uma arquitetura que visa estabelecer a separação de decisões de negócios e interface, mas seguindo um sistema simples. Acaba sendo uma arquitetura menos burocrática e mais flexível que o VIPER, mas que mantém a organização dos componentes bem feita.
+
+#### _Swift_ + _Storyboards_
+Linguagem utilizada: _Swift_ 5. 
+Apesar da ascensão do uso de UISwift para construção das interfaces, optei por utilizar _Storyboards_ por ter mais familiaridade. Eu utilizo _Storyboards_ separadas com uma _View Controller_ pra cada e extesões de uso genérico de tipos que facilitam a chamada realizada via código. 
+
+#### _Utils_ e _Components_
+Utilizo também extensões para criar xibs de _Table View Cell_ e _Collection View Cell_ em componentes separados que podem ser reutilizados em qualquer parte do código posteriormente. Além disso, as extesões das classes permitem que eu faça validação dos tipos de forma limpa no código.
+
+#### Service
+Uso um _Service_ de requisição com a API para deixar os endpoints transparentes na _ViewModel_. Ela somente trata erro ou sucesso da requisição. O _Service_ utiliza o [Alamofire](https://github.com/Alamofire/Alamofire) e faz injeção de dependência dos objetos recebidos pela API.
+
+
+### Imagens do app
+
+| <img src="/images/splashscreen.png" width="250"> | <img src="/images/signupscreen.png" width="250"> | <img src="/images/feedscreen.png" width="250">
+| <img src="/images/feedscreen2.png" width="250"> | <img src="/images/fullscreen.png" width="250"> | <img src="/images/homescreen.png" width="250">
 
 Photos By:
 - [Charles Deluvio](https://unsplash.com/photos/Mv9hjnEUHR4) 
