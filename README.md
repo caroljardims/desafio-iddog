@@ -55,6 +55,9 @@ Utilizo também extensões para criar xibs de _Table View Cell_ e _Collection Vi
 #### _Service_
 Uso um _Service_ de requisição com a API para deixar os endpoints transparentes na _ViewModel_. Ela somente trata erro ou sucesso da requisição. O _Service_ utiliza o [Alamofire](https://github.com/Alamofire/Alamofire) e faz injeção de dependência dos objetos recebidos pela API.
 
+#### _Protocols_
+Usei _protocols_ para desempenhar a função de _listener_ de modificação/atualização de componentes por se tratar de um projeto de baixa complexidade. 
+
 #### Testes
 Escrevi testes unitários e testes de interface simples pra avaliar o comportamento das _ViewModels_ e das telas de _login_ e _feed_.
 
