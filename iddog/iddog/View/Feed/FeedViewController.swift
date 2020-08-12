@@ -39,6 +39,7 @@ class FeedViewController: UIViewController, StoryboardLoadable {
     }
     
     func setupView() {
+        self.view.accessibilityIdentifier = "FeedView"
         viewModel.feedViewUpdate = self
         viewModel.getFeed(nil, success: {
             self.reloadData()

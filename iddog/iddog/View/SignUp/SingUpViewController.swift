@@ -18,10 +18,12 @@ class SingUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "MainView"
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         viewModel.checkUserToken(isLogged: {logged in
             if (logged) { self.gotoFeed() }
         })
@@ -45,7 +47,7 @@ class SingUpViewController: UIViewController {
     
     func gotoFeed(){
         let feed: FeedViewController = UIStoryboard.loadViewController()
-                       self.present(feed, animated: true, completion: nil)
+        self.present(feed, animated: true, completion: nil)
     }
     
     func presentSimpleAlert(_ title: String?, _ message: String?){
