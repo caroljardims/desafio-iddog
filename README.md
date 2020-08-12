@@ -49,9 +49,11 @@ Apesar da ascensão do uso de UISwift para construção das interfaces, optei po
 #### _Utils_ e _Components_
 Utilizo também extensões para criar xibs de _Table View Cell_ e _Collection View Cell_ em componentes separados que podem ser reutilizados em qualquer parte do código posteriormente. Além disso, as extesões das classes permitem que eu faça validação dos tipos de forma limpa no código.
 
-#### Service
+#### _Service_
 Uso um _Service_ de requisição com a API para deixar os endpoints transparentes na _ViewModel_. Ela somente trata erro ou sucesso da requisição. O _Service_ utiliza o [Alamofire](https://github.com/Alamofire/Alamofire) e faz injeção de dependência dos objetos recebidos pela API.
 
+#### Testes
+Escrevi testes unitários e testes de interface simples pra avaliar o comportamento das _ViewModels_ e das telas de _login_ e _feed_.
 
 ### Imagens do app
 
