@@ -1,6 +1,6 @@
 # desafio iddog
 
-### Objetivo
+### Objetivo :dart:
 
 #### :white_check_mark: Criar uma tela de login onde o usuário precisa digitar um endereço de email válido.
  A tela principal é a tela de login/signup. Por padrão ela é a tela principal e sob a condição do usuário não tem um token válido salvo localmente. Na condição do app detectar um token válido, ele direciona à tela do feed.
@@ -17,7 +17,7 @@ A imagem selecionada da _table view_ é expandida numa nova _view_.
 #### Extra
 O usuário pode sair da tela de feed e seu token será deletado do armazenamento. Isso permitirá que ele entre no feed utilizando outro endereço de e-mail.
 
-### Requisitos técnicos
+### Requisitos técnicos :wrench:
 #### :white_check_mark: Versão mínima: iOS 9.0 
 #### :white_check_mark: Libs de terceiros
 Foi utilizado o CocoaPods como gestor de dependências para 3 bibliotecas utilizadas neste projeto:
@@ -37,7 +37,7 @@ Foi utilizado o CocoaPods como gestor de dependências para 3 bibliotecas utiliz
 #### :white_check_mark: Cache de imagens
 O cache de imagens é feito automaticamente nas requisições feitas com a lib [Nuke](https://github.com/kean/Nuke).
 
-### Decisões técnicas
+### Decisões técnicas :exclamation:
 
 #### Arquitetura
 Utilizei a arquitetura MVVM na construção da aplicação, por ser uma arquitetura que visa estabelecer a separação de decisões de negócios e interface, mas seguindo um sistema simples. Acaba sendo uma arquitetura menos burocrática e mais flexível que o VIPER, mas que mantém a organização dos componentes bem feita.
@@ -55,7 +55,7 @@ Uso um _Service_ de requisição com a API para deixar os endpoints transparente
 #### Testes
 Escrevi testes unitários e testes de interface simples pra avaliar o comportamento das _ViewModels_ e das telas de _login_ e _feed_.
 
-### Imagens do app
+### Imagens do app :dog:
 
 | <img src="/images/splashscreen.png" width="250"> | <img src="/images/signupscreen.png" width="250"> | <img src="/images/feedscreen.png" width="250">
 | <img src="/images/feedscreen2.png" width="250"> | <img src="/images/fullscreen.png" width="250"> | <img src="/images/homescreen.png" width="250">
